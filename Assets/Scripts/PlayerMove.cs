@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
     // If the player has reached the end of the game, display game over scene
     void isFinished()
     {
-		SceneManager.LoadScene("workingscene", LoadSceneMode.Additive);
+		SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
 		print("Scene loaded!");
     }
 }
