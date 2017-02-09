@@ -62,6 +62,7 @@ public class PlayerMove : MonoBehaviour
 	void hitCoin()
 	{
 	    maxSpeed += speedBy;
+        currentSpeed += speedBy;
 		print("Player Speed Increased!");
 	}
 
