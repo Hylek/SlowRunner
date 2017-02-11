@@ -10,6 +10,7 @@ public class AddScore : MonoBehaviour
         if(collision.tag == "Player")
         {
             Score.AddPoint();
+            GetComponent<AudioSource>().Play();
         }
     }
 }
