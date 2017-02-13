@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
 	
     public bool didJump = false;
 	private Rigidbody2D rb2d;
+    // private bool isGrounded = true;
 
 	void Start ()
 	{
@@ -72,4 +73,16 @@ public class PlayerMove : MonoBehaviour
 		SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
 		print("Scene loaded!");
     }
+
+    /* void OnCollisionStay(Collision col)
+    {
+        isGrounded = true;
+    }
+    void OnCollisionExit(Collision col)
+    {
+        if(isGrounded)
+        {
+            isGrounded = false;
+        }
+    } */
 }
