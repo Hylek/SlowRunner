@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// If collision with player is detected then add 5 points to score and play a sound
+// If collision with player is detected then add 5 points to score and cue a sound
 public class AddScore : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
