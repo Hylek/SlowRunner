@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlowRunner.CSharp", "SlowRunner.CSharp.csproj", "{710EABC9-3E21-B320-083A-72728BD65ACE}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlowRunner", "Assembly-CSharp.csproj", "{651A3D48-7FFC-902F-0CD6-55EDECD14066}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{710EABC9-3E21-B320-083A-72728BD65ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{710EABC9-3E21-B320-083A-72728BD65ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{710EABC9-3E21-B320-083A-72728BD65ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{710EABC9-3E21-B320-083A-72728BD65ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651A3D48-7FFC-902F-0CD6-55EDECD14066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651A3D48-7FFC-902F-0CD6-55EDECD14066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651A3D48-7FFC-902F-0CD6-55EDECD14066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651A3D48-7FFC-902F-0CD6-55EDECD14066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
