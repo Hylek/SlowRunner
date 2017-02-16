@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-// Script that handles everything relating to the player
+// Script that handles everything related to the player
 public class PlayerMove : MonoBehaviour
 {
     public float currentSpeed = 0.0f;
@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
 	
     public bool didJump = false;
 	private Rigidbody2D rb2d;
-    // private bool isGrounded = true;
 
 	void Start ()
 	{
@@ -33,6 +32,12 @@ public class PlayerMove : MonoBehaviour
         if(currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
+        }
+
+        // If the player's current speed is less than 1, then add 1
+        if(currentSpeed < 1)
+        {
+            currentSpeed += 1;
         }
 
 		// Setting didJump to true if player has pressed the Spacebar
@@ -73,16 +78,4 @@ public class PlayerMove : MonoBehaviour
 		SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
 		print("Scene loaded!");
     }
-
-    /* void OnCollisionStay(Collision col)
-    {
-        isGrounded = true;
-    }
-    void OnCollisionExit(Collision col)
-    {
-        if(isGrounded)
-        {
-            isGrounded = false;
-        }
-    } */
 }
