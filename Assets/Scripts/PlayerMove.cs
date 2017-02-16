@@ -15,7 +15,6 @@ public class PlayerMove : MonoBehaviour
 
     public bool didJump = false;
 	private Rigidbody2D rb2d;
-    // private bool isGrounded = true;
 
 	void Start ()
 	{
@@ -30,6 +29,7 @@ public class PlayerMove : MonoBehaviour
 		// Adding acceleration to the player
         currentSpeed += acceleration;
 
+		// If current speed is less than max speed, then make currentspeed max speed
         if(currentSpeed > maxSpeed)
         {
             currentSpeed = maxSpeed;
@@ -40,6 +40,12 @@ public class PlayerMove : MonoBehaviour
         {
             didJump = true;
         }
+
+		// If current speed is less than 1 than make it 1 so player does not stop
+		if (currentSpeed < 1)
+		{
+			currentSpeed += 1;
+		}
     }
 
 	void FixedUpdate ()
