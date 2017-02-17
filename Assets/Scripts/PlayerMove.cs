@@ -18,7 +18,7 @@ public class PlayerMove : MonoBehaviour
 
 	void Start ()
 	{
-	    rb2d = GetComponent<Rigidbody2D> ();
+	    rb2d = GetComponent<Rigidbody2D> ();    // Get the Player's rigidbody component
 	}
 
 	void Update ()
@@ -52,23 +52,23 @@ public class PlayerMove : MonoBehaviour
 		// If didJump is true then move the player vertically, then set didJump back to false
         if(didJump)
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpSize);
-            didJump = false;
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpSize);    // Apply the jump
+            didJump = false;                                                // Set jump bool to false
         }
 	}
 
 	// If the player has hit something then slow them down.
     void hasHit()
     {
-		currentSpeed -= slowBy;
+		currentSpeed -= slowBy;     // Decrease current speed
         print("Player Slowed!");
     }
 
 	// If the player hits a coin then maxSpeed increases by 1 for every coin hit
 	void hitCoin()
 	{
-	    maxSpeed += speedBy;
-        currentSpeed += speedBy;
+	    maxSpeed += speedBy;        // Increase max possible speed by 1
+        currentSpeed += speedBy;    // Increase current speed by 1
 		print("Player Speed Increased!");
 	}
 
