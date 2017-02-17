@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\CollisionSlow.cs" />
     <Compile Include="Assets\Scripts\CollisionSpeed.cs" />
     <Compile Include="Assets\Scripts\FinishFlag.cs" />
+    <Compile Include="Assets\Scripts\MovieScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
