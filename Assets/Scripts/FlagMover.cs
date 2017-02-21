@@ -22,7 +22,7 @@ public class FlagMover : MonoBehaviour {
 		if (time > 0) {
 			rb2d.AddForce (Vector2.down * speed);
 		}
-		if (time > 60) {
+		if (time > 41) { // may need to be changed
 			rb2d.velocity = Vector3.zero;
 		}
 	}
