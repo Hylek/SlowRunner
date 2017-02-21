@@ -9,16 +9,18 @@ public class PlayerMove : MonoBehaviour
     public float currentSpeed = 0.0f;
     public float maxSpeed = 5.0f;
     public float acceleration = 0.1f;
+	public float deathSpeed = 50.0f; // Maybe use this to enforce backwards?
     public float jumpSize = 300f;
 	public float slowBy = 5;
 	public float speedBy = 1;
+	public float highScore = 0;
 	
     public bool didJump = false;
 	private Rigidbody2D rb2d;
 
 	void Start ()
 	{
-	    rb2d = GetComponent<Rigidbody2D> ();    // Get the Player's rigidbody component
+	    rb2d = GetComponent<Rigidbody2D> (); // Get the Player's rigidbody component
 	}
 
 	void Update ()
@@ -45,6 +47,11 @@ public class PlayerMove : MonoBehaviour
         {
             didJump = true;
         }
+
+		if (currentSpeed == deathSpeed) 
+		{
+			SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
+		}
     }
 
 	void FixedUpdate ()
@@ -77,5 +84,12 @@ public class PlayerMove : MonoBehaviour
     {
 		SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
 		print("Scene loaded!");
+
+		if (Score.score > highScore) {
+			// Score.score = highScore; // When the game is over set the current score to the highscore
+		} else {
+			// Do stuff
+		}
+
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Script that handles game over scene
+// Script that handles the game over scene
 public class GameOver : MonoBehaviour
 {
     private void OnGUI()
