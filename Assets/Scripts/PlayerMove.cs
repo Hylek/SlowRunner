@@ -1,26 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-// Script that handles everything related to the player
+// Script that handles everything relating to the player
 public class PlayerMove : MonoBehaviour
 {
     public float currentSpeed = 0.0f;
     public float maxSpeed = 5.0f;
     public float acceleration = 0.1f;
-	public float deathSpeed = 50.0f; // Maybe use this to enforce backwards?
     public float jumpSize = 300f;
 	public float slowBy = 5;
 	public float speedBy = 1;
-	public float highScore = 0;
-	
+
     public bool didJump = false;
 	private Rigidbody2D rb2d;
 
 	void Start ()
 	{
-	    rb2d = GetComponent<Rigidbody2D> (); // Get the Player's rigidbody component
+	    rb2d = GetComponent<Rigidbody2D> ();
 	}
 
 	void Update ()
@@ -36,22 +33,11 @@ public class PlayerMove : MonoBehaviour
             currentSpeed = maxSpeed;
         }
 
-        // If the player's current speed is less than 1, then add 1
-        if(currentSpeed < 1)
-        {
-            currentSpeed += 1;
-        }
-
 		// Setting didJump to true if player has pressed the Spacebar
         if(Input.GetKeyDown(KeyCode.Space))
         {
             didJump = true;
         }
-
-		if (currentSpeed == deathSpeed) 
-		{
-			SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
-		}
     }
 
 	void FixedUpdate ()
@@ -59,37 +45,28 @@ public class PlayerMove : MonoBehaviour
 		// If didJump is true then move the player vertically, then set didJump back to false
         if(didJump)
         {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpSize);    // Apply the jump
-            didJump = false;                                                // Set jump bool to false
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpSize);
+            didJump = false;
         }
 	}
 
 	// If the player has hit something then slow them down.
     void hasHit()
     {
-		currentSpeed -= slowBy;     // Decrease current speed
+		currentSpeed -= slowBy;
         print("Player Slowed!");
     }
 
 	// If the player hits a coin then maxSpeed increases by 1 for every coin hit
 	void hitCoin()
 	{
-	    maxSpeed += speedBy;        // Increase max possible speed by 1
-        currentSpeed += speedBy;    // Increase current speed by 1
+	    maxSpeed += speedBy;
 		print("Player Speed Increased!");
 	}
 
-    // If the player has reached the end of the game, display game over scene
-    void isFinished()
+    // If the player has reached the end of the game, display game complete scene with score
+    void Finished()
     {
-		SceneManager.LoadSceneAsync("GameOver", LoadSceneMode.Single);
-		print("Scene loaded!");
-
-		if (Score.score > highScore) {
-			// Score.score = highScore; // When the game is over set the current score to the highscore
-		} else {
-			// Do stuff
-		}
-
+        // Application.LoadLevel(GameOver);
     }
 }

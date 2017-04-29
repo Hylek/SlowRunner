@@ -5,13 +5,7 @@ using UnityEngine;
 // Gets when the player hits a coin and then updates the score to add 5 points
 public class Score : MonoBehaviour
 {
-    public static int score;
-
-	void Start()
-	{
-		// Set the score to 0 everytime the scene loads
-		score = 0;
-	}
+    static int score = 0;
 
     void Update ()
     {
